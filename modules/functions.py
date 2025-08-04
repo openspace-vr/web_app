@@ -10,6 +10,8 @@ sub_dir = "Bonus"
 dynamic_path = os.path.join(base_dir, sub_dir,"todos.txt") """
 
 def cursor_position():
+    #checks if each line has new line character
+    #if it does go to next line if not add a carriage return
     with open(dynamic_path, "a+") as file:
         while True:
             line = file.readline()
@@ -22,6 +24,7 @@ def cursor_position():
                 #with open(dynamic_path, "a") as append:
                 #You have to use a+ to append to end of the file
                 file.write("\n")
+            #if text does not exist exit the loop
             if not line:
                 break
 
@@ -35,6 +38,7 @@ def write_todos(new_todos):
     with open(dynamic_path, 'w') as file:
         file.writelines(new_todos)  #This will automatically close the file
 
+#testing functions.py
 if __name__ == "__main__":
     print("Hello")
     print(get_todos())

@@ -5,8 +5,9 @@ from modules import functions
 todos = functions.get_todos()
 
 def add_todo():
+    #functions check the position of cursor
+    # and add activities
     new_todo = st.session_state["activity"]
-    todos.append(new_todo)
     todos.append(new_todo)
     functions.cursor_position()
     functions.write_todos(todos)
